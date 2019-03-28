@@ -24,7 +24,7 @@ EOS = 'EOS'
 
 tf.reset_default_graph()
 # Carica il pretraining Glove per la lingua italiana
-model = Word2Vec.load('C:/Users/simon/Desktop/DependencyParsingTools/home/berardi/glove_WIKI')
+model = Word2Vec.load('/home/simone/RNN_/glove_WIKI')
 
 def load_glove_embedding(model):
     embeddings = {}
@@ -36,7 +36,7 @@ pretrain_vectors = load_glove_embedding(model)
 
 #print(pretrain_vectors['corriere'])
 
-data = open('C:/Users/simon/Desktop/DependencyParsingTools/ud-treebanks-v2.2/UD_Italian-ISDT/it_isdt-ud-dev.conllu', 'r', encoding = 'utf-8')
+data = open('/home/simone/RNN_/it_isdt-ud-dev.conllu', 'r', encoding = 'utf-8')
 data_matform = []   
 for token in parse_incr(data):
     data_matform.append(token)
